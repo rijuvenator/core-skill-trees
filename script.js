@@ -2,7 +2,7 @@ async function main()
 {
     // the whole thing has to be in an asynchronous function so that I have access to it
     // slick trick: use the window html path filename to get the lower case, no "the" name to build the skills txt file name
-    lowerCaseCharacterName = /\/(.*)\.html/.exec(window.location.pathname)[1];
+    lowerCaseCharacterName = /.*\/(.*?)\.html/.exec(window.location.pathname)[1];
     response = await fetch(lowerCaseCharacterName + '_skills.txt');
     data = await response.text();
 
