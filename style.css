@@ -1,0 +1,116 @@
+/* MAIN STYLES */
+* { margin: 0; padding: 0; border: none; }
+html {
+    height: 100%;
+}
+body {
+    font-family: Georgia, sans-serif;
+    background-color: white;
+    height: 100%;
+    color: black;
+}
+.page {
+    background-color: white;
+    margin: auto;
+    width: 100%;
+    height: auto;
+    overflow: auto;
+    min-height: 100%;
+}
+.center {
+    text-align: center;
+}
+.ib {
+    display: inline-block;
+}
+
+/* TEXT STYLES */
+.label {
+    font-weight: bold;
+    font-size: 12pt;
+    letter-spacing: -1px;
+    font-variant: small-caps;
+}
+.capename {
+    font-size: 30pt;
+    font-weight: bold;
+}
+.capeseason {
+    font-size: 20pt;
+    font-weight: bold;
+}
+.capeclass {
+    font-weight: bold;
+    font-size: 20pt;
+}
+.capetype {
+    font-weight: bold;
+    font-size: 14pt;
+    font-style: italic;
+}
+.skilltitle {
+    font-weight: bold;
+    font-size: 15pt;
+}
+.skillpara {
+    font-size: 9pt;
+    font-style: italic;
+}
+
+/* STATE ROW */
+.stateouter {
+    width: 33%;
+    margin: auto;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.statecolumn {
+    width: 33.3%;
+    float: left;
+}
+.stateinput {
+    width: 100%;
+    height: 28px;
+    font-weight: bold;
+    font-size: 18pt;
+    font-family: Georgia, sans-serif;
+}
+.statebutton {
+    height: 28px;
+    font-family: Georgia, sans-serif;
+    font-size: 14pt;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 2px;
+    width: 75%;
+    background-color: beige;
+}
+
+/*NAV BAR*/
+.navbardiv {
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+    background-color: burlywood;
+}
+a:active {
+    text-decoration: none;
+}
+.navbar {
+    background-color: sienna;
+    border-radius: 7px;
+    padding: 10px;
+    margin: 5px;
+    color: white;
+}

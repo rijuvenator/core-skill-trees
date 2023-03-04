@@ -1,0 +1,367 @@
+HEX
+NOMAD
+ETERNAL
+?
+?
+?
+####
+User can teleport up to 50m away, "Jump", appearing with a crack 
+and a burst of smoke, leaving behind an image of smoke. Jumps 
+require line-of-sight. Jump cooldown is 5 minutes.
+Jumps use a Movement turn.
+BASE POWER: HEX 
+0-0
+0
+start
+middle
+####
+Double the number of Jumps available before cooldown.
+
+
+
+DOUBLE JUMP
+0-0
+0
+start
+middle
+####
+Double the number of Jumps available before cooldown.
+
+
+
+DOUBLE JUMP
+0-0
+0
+start
+middle
+####
+Add 50 m to your Range.
+
+
+
+TRAVELER
+0-0
+0
+start
+middle
+####
+Add 150 m to your Range.
+
+
+
+TRAVELEST
+0-0
+0
+start
+middle
+####
+Transport non-organics while Jumping. The probability of success 
+depends on the size of the object and an AGL roll.
+
+
+SIDE-ALONG APPARITION
+0-0
+0
+start
+middle
+####
+Transport up to one person with you. Jumping may have adverse 
+effects on non-Nomads, such as confusion or disorientation. 
+
+
+PORTKEY
+0-0
+0
+start
+middle
+####
+Reduce cooldown to 3 minutes / 3 combat turns.
+
+
+
+QUICK CHARGE
+0-0
+0
+start
+middle
+####
+Supercharge any obtained skill. Effects vary depending on chosen 
+skill. Once skill is supercharged, Skill Boost cannot be used on any 
+other skill. 
+
+SKILL BOOST
+0-0
+0
+start
+middle
+####
+Perform Jumps completely silently.
+
+
+
+...BUT DEADLY
+0-0
+0
+start
+middle
+####
+Force attacking enemies to rol PER for each attack when in 
+darkness. Enemies that can locate you without sight do not suffer 
+from this penalty.
+
+I'M BATMAN
+0-0
+0
+start
+middle
+####
+Gain advantage when attacking from the back. This bonus may be 
+negated by predictability.
+
+
+WRAITH
+0-0
+0
+start
+middle
+####
+Gain advantage on dropping or falling STR rolls; gain double 
+advantage on dropping or falling END rolls.
+
+
+BORDERLANDS 2
+0-0
+0
+start
+middle
+####
+Jump to your exact location without counting against cooldown.
+
+
+
+USELESS ABILITY
+0-0
+0
+start
+middle
+####
+Gain the ability to cancel your momentum after a Jump.
+
+
+
+AZAZEL
+0-0
+0
+start
+middle
+####
+Gain the ability to change the direction, but not magnitude, of your 
+momentum after a Jump. Momentum-centric attacks count as 
+falling attacks.
+
+THINKING WITH PORTALS
+0-0
+0
+start
+middle
+####
+Gain the ability to Jump into the place of liquids, loose solids, or 
+solids with approximately your shape and size, teleporting them into 
+your location. Performing Displacement counts as two jumps 
+against cooldown.
+DISPLACEMENT
+0-0
+0
+start
+middle
+####
+Double the number of Jumps available before cooldown.
+
+
+
+DOUBLE JUMP
+0-0
+0
+start
+middle
+####
+Outside of combat, gain the ability to designate a single location as 
+a Safe Space. Safe Spaces can be Jumped to without line-of-sight 
+and ignore cooldown.
+
+SAFE SPACE
+0-0
+0
+start
+middle
+####
+Gain the ability to perform Displacement on living targets of 
+approximately your shape and size.
+
+
+REPLACEMENT
+0-0
+0
+start
+middle
+####
+Permanently halve your END stat.
+
+
+
+FRAGILITY
+0-0
+0
+start
+middle
+####
+Survive any physical attack from full health.
+
+
+
+HEALTH GATE
+0-0
+0
+start
+middle
+####
+Gain the ability to use Reactive Teleport, which automatically 
+triggers when a physical attack is about to hit you, teleporting you 
+out of harm's way. Reactive Teleport immediately triggers cooldown.
+
+REACTIVE TELEPORT
+0-0
+0
+start
+middle
+####
+Gain advantage on any roll following any Health Gate activation or a 
+Reactive Teleport that prevented a knockout or death.
+
+
+THE THRILL
+0-0
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+0-0
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+0-0
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+0-0
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+0-0
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+0-0
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+0-0
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+0-0
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+0-0
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+0-0
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+0-0
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+0-0
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+0-0
+0
+start
+middle
+####

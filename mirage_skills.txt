@@ -1,0 +1,367 @@
+MIRAGE
+JOKER
+?
+?
+?
+?
+####
+User can create Projections, visual-only additions to the target's 
+unaltered perception, comprised of Entities, representations of 
+people or objects. The quality of the Projection depends on a PER 
+roll, with the user suffering a -3 PER debuff. Projections cost a Bonus Action.
+BASE POWER: MIRAGE 
+0-0
+2
+middle
+hanging
+####
+Manifest up to two different entities in a Projection.
+
+
+
+TWO OF A KIND
+1-1
+0
+start
+middle
+####
+Manifest up to four different entities in a Projection.
+
+
+
+FOUR OF A KIND
+2-1
+0
+start
+middle
+####
+Reduce Cooldown to 3 minutes / 3 combat turns.
+
+
+
+QUICK CHARGE
+1-2
+0
+start
+middle
+####
+Reduce cooldown to 2 minutes / 2 combat turns.
+
+
+
+QUICKER CHARGE
+2-2
+3
+end
+hanging
+####
+Maintain multiple simultaneous Projections at once. Each Projection 
+causes a stacking PER debuff.
+
+
+SMOKE AND MIRRORS
+3-1
+1
+start
+middle
+####
+Increase or decrease the stats of Projection targets depending on 
+the type of Projection and the PER roll.
+
+
+MYSTIFY
+3-2
+7
+start
+middle
+####
+Manifest Inverse Entities, which remove an existing object or person 
+from a target's perception. Each Inverse Entity has the same cost 
+as a standard entity.
+
+DISAPPEARING ACT
+3-3
+7
+start
+auto
+####
+Supercharge any obtained skill. Effects vary depending on chosen 
+skill. Once skill is supercharged, Skill Boost cannot be used on any 
+other skill. 
+
+SKILL BOOST
+3-4
+0
+start
+middle
+####
+Extend Projections to touch, making the target feel texture and 
+resistance upon contact with an Entity. Variable textures and 
+complex geometries require higher rolls. 
+
+FEELING IS BELIEVING
+3-5
+1
+start
+middle
+####
+Target up to three people with a single Projection.
+
+
+
+CAPTIVE AUDIENCE
+3-6
+2
+middle
+hanging
+####
+Extend Projections to additive sound, making the target hear 
+sounds from an Entity. Complex sounds like speech or music require 
+higher rolls.
+
+THE MAGIC WORDS
+3-7
+1
+start
+middle
+####
+Gain the ability to manifest a World Projection, which can contain an 
+unlimited number of Entities and background objects. Suffer a PER 
+debuff equal to your current unmodified PER.
+
+GRAND ILLUSION
+4-3
+0
+start
+middle
+####
+Extend Projections to almost all remaining senses, including taste, 
+smell, acceleration, and proprioception. Complex sensory inputs 
+require higher rolls.
+
+SUSPENSION OF DISBELIEF
+5-5
+2
+end
+hanging
+####
+Gain the ability to manifest a Revealed Projection, which shows the 
+effects of an existing Projection to other targets, but reveals it as an 
+illusion. Revealed Projections do not require a PER roll or debuff.
+
+PULL BACK THE CURTAIN
+5-6
+2
+start
+hanging
+####
+Maintain Projections at any range. Decrease an ongoing Projection's 
+debuff to 0 over several days.
+
+
+THE LONG CON
+6-3
+6
+middle
+auto
+####
+Gain the ability to manifest Self-Entities, which are Entities of 
+yourself. Self-Entity Projections do not require a PER roll and only 
+cause a -1 PER debuff.
+
+IDENTICAL TWINS
+4-4
+0
+start
+middle
+####
+Receive all Creator stat bonuses and perks, and appear to Creators 
+as one of their kind.
+
+
+ONE OF US
+5-7
+6
+end
+auto
+####
+Target an unlimited number of people with a Self-Entity Projection.
+
+
+
+FOOL THE WORLD
+5-8
+0
+start
+middle
+####
+Gain the ability to damage targets of a Projection with Self-Entity 
+attacks. Self-Entities have a STR stat equal to your STR stat divided 
+by the number of Self-Entities active. Self-Entities cannot be 
+harmed, but can appear stunned or wounded.
+EMOTIONAL DAMAGE
+6-4
+6
+middle
+auto
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+4-1
+3
+end
+hanging
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+5-1
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+5-2
+2
+start
+hanging
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+6-1
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+4-2
+3
+end
+hanging
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+5-3
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+5-4
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+6-2
+5
+end
+auto
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+4-5
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+5-9
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+5-10
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+6-5
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+4-6
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+5-11
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+5-12
+2
+start
+hanging
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+6-6
+0
+start
+middle
+####

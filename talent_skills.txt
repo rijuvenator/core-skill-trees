@@ -1,0 +1,367 @@
+THE TALENT
+CHANGER
+?
+HACKER
+?
+ETERNAL
+####
+User can Shift, adopting the features of a nearby human over five seconds and suffering
+a -3 AGL debuff while Shifted. The quality of the Shift depends on a PER roll. Over time,
+the user can build up a Self, a mental representation of a human, and Shift to them
+without requiring them or suffering a debuff. Shifting costs a bonus action.
+BASE POWER: THE TALENT 
+0-0
+2
+middle
+hanging
+####
+Reduce cooldown to 3 minutes / 3 combat turns.
+
+
+
+QUICK CHARGE
+1-1
+0
+start
+middle
+####
+Reduce cooldown to 2 minutes / 2 combat turns.
+
+
+
+QUICKER CHARGE
+2-1
+0
+start
+middle
+####
+Maintain two additional concurrent Selves.
+
+
+
+STUNT DOUBLES
+1-2
+0
+start
+middle
+####
+Maintain three additional concurrent Selves, for a total of six.
+
+
+
+STUNT TRIPLES
+2-2
+3
+end
+hanging
+####
+Develop Selves much faster with the consent of the original person.
+
+
+
+THE CONTRACT
+3-1
+1
+start
+middle
+####
+Grant a target +2 in a stat of your choice while Shifted to their Self.
+
+
+
+PATRON OF THE ARTS
+3-2
+7
+start
+middle
+####
+Gain the ability to Shift only part of your body. All AGL debuffs 
+stack, and are retained until the Shift ends.
+
+
+CGI
+3-3
+7
+start
+auto
+####
+Supercharge any obtained skill. Effects vary depending on chosen 
+skill. Once skill is supercharged, Skill Boost cannot be used on any 
+other skill. 
+
+SKILL BOOST
+3-4
+0
+start
+middle
+####
+Copy clothing in addition to body type and features. Copied clothing 
+can cover or intersect with existing clothing, and cannot be taken 
+off.
+
+COSTUME DEPARTMENT
+3-5
+1
+start
+middle
+####
+Copy vocal structures to replicate a target's voice, in addition to 
+body type and features. Dialect Coach does not affect word choice 
+or speaking styles.
+
+DIALECT COACH
+3-6
+2
+middle
+hanging
+####
+Shift instantaneously.
+
+
+
+JUMP CUT
+3-7
+1
+start
+middle
+####
+Replace one of your stats with the target's stat when Shifting to a 
+Self. Use this stat for rolls until your next Shift.
+
+
+METHOD ACTING
+4-3
+0
+start
+middle
+####
+Maintain an unlimited number of Selves; suffer a -1 PER debuff for 
+each concurrent Self after the 6th one.
+
+
+ENSEMBLE CAST
+5-5
+2
+end
+hanging
+####
+Maintain one stat of your choice when Shifting between Selves. Use 
+this stat for rolls until your next Shift. This skill stacks with Method 
+Acting.
+
+SOUVENIR
+5-6
+2
+start
+hanging
+####
+Regain the use of forgotten Selves instantly upon seeing the original 
+target.
+
+
+LINE, PLEASE?
+6-3
+6
+middle
+auto
+####
+Shift without requiring a target, choosing a desired look. The 
+accuracy of the Shift is determined by a PER roll.
+
+
+IMPROVISATION
+4-4
+0
+start
+middle
+####
+Improvised Shifts can now include fine customizable details like 
+tattoos, which are not susceptible to the PER roll.
+
+
+BILLBOARD
+5-7
+6
+end
+auto
+####
+Shifting becomes a free action.
+
+
+
+VERSATILITY
+5-8
+0
+start
+middle
+####
+Gain +2 to any stat roll immediately after Shifting to a new shape.
+
+
+
+BREAKOUT ROLE
+6-4
+6
+middle
+auto
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+4-1
+3
+end
+hanging
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+5-1
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+5-2
+2
+start
+hanging
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+6-1
+0
+start
+middle
+####
+Gain the ability to build up a Capeself, a specialized Self from a 
+cape. Capeselves allows you to use a low level of the target's power, 
+depending on the power copied. Capeselves require consent.
+
+CAPESELF
+4-2
+3
+end
+hanging
+####
+Capeself powers are intuitive, giving you insight into the limitations 
+and quirks of the power while in use, sometimes revealing details 
+that the original cape did not know.
+
+QUICK STUDY
+5-3
+0
+start
+middle
+####
+While in a Capeself, gain the stat bonuses, but not the class perks, 
+of your new class.
+
+
+ONE OF US
+5-4
+0
+start
+middle
+####
+Partial Transformations now work with Capeselves, allowing you to 
+retain some of the power of a previous Capeself when Shifting to a 
+new one.
+
+BEST OF BOTH WORLDS
+6-2
+5
+end
+auto
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+4-5
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+5-9
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+5-10
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+6-5
+0
+start
+middle
+####
+Your original body becomes just another Self, and cannot be 
+reverted to without cooldown. Personality traits of other Selves start 
+to compete with your original body's traits.
+
+SELFLESS
+4-6
+0
+start
+middle
+####
+Gain +1 END for each Self maintained.
+
+
+
+EXTENDED CAST
+5-11
+0
+start
+middle
+####
+Gain the ability to Regenerate, which allows you to repair your 
+body, given by 1d10 x 1d10 / 100. Regeneration takes 30 minutes 
+and can be used once a day. 
+
+REGENERATION
+5-12
+2
+start
+hanging
+####
+Wounds are no longer carried over upon Shifting, but are retained 
+per Self.
+
+
+KILLER7
+6-6
+0
+start
+middle
+####

@@ -1,0 +1,367 @@
+BULLSEYE
+OLYMPIAN
+?
+?
+?
+SAGE
+####
+User can Throw objects with great power, determined by a STR roll, 
+and near perfect accuracy. Throws are limited to inorganic 
+projectiles 2lbs or lighter.
+Throws cost an Action.
+BASE POWER: BULLSEYE 
+0-0
+2
+middle
+hanging
+####
+Reduce cooldown to 3 minutes / 3 combat turns.
+
+
+
+QUICK CHARGE
+1-1
+0
+start
+middle
+####
+Reduce cooldown to 2 minutes / 2 combat turns.
+
+
+
+QUICKER CHARGE
+2-1
+0
+start
+middle
+####
+Increase Throw range to 150% peak human.
+
+
+
+YEET
+1-2
+0
+start
+middle
+####
+Increase Throw range to 300% peak human.
+
+
+
+YEEEEET!
+2-2
+3
+end
+hanging
+####
+Gain the ability to Anti-Throw, which can catch any kind of 
+projectile, with success determined by an AGL roll. Anti-Throw is 
+usable as a defensive action or a Bonus Action once per cooldown.
+
+ANTI-PUSH
+3-1
+1
+start
+middle
+####
+Gain an additional bonus action each turn. 
+
+
+
+FREE LAUNCH
+3-2
+7
+start
+middle
+####
+Increase projectile weight limit up to 16 lbs. The projectile's mass 
+and shape will affect the range and speed of the Throw.
+
+
+WEIGHT FOR IT
+3-3
+7
+start
+auto
+####
+Supercharge any obtained skill. Effects vary depending on chosen 
+skill. Once skill is supercharged, Skill Boost cannot be used on any 
+other skill. 
+
+SKILL BOOST
+3-4
+0
+start
+middle
+####
+Gain the ability to Guest Pass, which allows you to Throw a 
+projectile at an Ally in a way that they cannot fail to catch it. The 
+ally can then use it on their next turn. Guest Pass costs a bonus 
+action. 
+GUEST PASS
+3-5
+1
+start
+middle
+####
+Control the orientation and rotational speed of a Thrown projectile 
+when it hits the target.
+
+
+PITCH PERFECT
+3-6
+2
+middle
+hanging
+####
+Accurately hit non-random moving targets with Throws.
+
+
+
+CRASH COURSE
+3-7
+1
+start
+middle
+####
+Ignore any projectile size and mass limits for solid projectiles. The 
+projectile's mass and shape will affect the range and speed of the 
+Throw.
+
+TRUCK CHUCK
+4-3
+0
+start
+middle
+####
+Gain the ability to Throw gases, propelling them akin to solids.
+
+
+
+CHUCK E. BREEZE
+5-5
+2
+end
+hanging
+####
+Gain the ability to Throw liquids, propelling them akin to solids.
+
+
+
+SUPER THROW-KER
+5-6
+2
+start
+hanging
+####
+Ignore any projectile size limits for all kinds of projectiles and gain 
+the ability to Throw large contiguous bodies of gas or liquid.
+
+
+W-HURL-D
+6-3
+6
+middle
+auto
+####
+Gain the ability to Wind Up, which charges up to add 1d10 of 
+damage to next turn's Throw. Winding Up costs a Bonus Action.
+
+
+WINED UP
+4-4
+0
+start
+middle
+####
+Double a Throw's damaging dice when attacking at point blank 
+range.
+
+
+STONE'S THROW
+5-7
+6
+end
+auto
+####
+Gain different buffs for different types of projectiles. Buffs depend 
+on familiarity and experience with that projectile.
+
+
+HOBBY LOB
+5-8
+0
+start
+middle
+####
+Gain the ability to Throw an extra projectile on your turn. This 
+Throw costs a Bonus Action.
+
+
+LORD OF THE FLINGS
+6-4
+6
+middle
+auto
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+4-1
+3
+end
+hanging
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+5-1
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+5-2
+2
+start
+hanging
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+6-1
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+4-2
+3
+end
+hanging
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+5-3
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+5-4
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+6-2
+5
+end
+auto
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+4-5
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+5-9
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+5-10
+0
+start
+middle
+####
+Discover this subclass to unlock!
+
+
+
+LOCKED SKILL
+6-5
+0
+start
+middle
+####
+Gain the ability to Focus, which allows you to intrinsically know the 
+path and destination of any Throw before the Throw is performed. 
+Focus costs a bonus action before your Throw.
+
+FOCUS
+4-6
+0
+start
+middle
+####
+Focus can now determine the path a projectile will take after it 
+collides with something. Focus costs a bonus action before your 
+Throw.
+
+IMPROVED FOCUS
+5-11
+0
+start
+middle
+####
+Focus becomes a free action if your vision is obscured during the 
+entirety of your turn.
+
+
+BLIND FOCUS
+5-12
+2
+start
+hanging
+####
+Gain the ability to Intercept, which allows you to perform a 
+seemingly-random Throw. If any projectile would hit you in the next 
+turn, your Thrown projectile will happen to be in the perfect place to 
+intercept it in midair. Intercept costs a bonus action. 
+INTERCEPT
+6-6
+0
+start
+middle
+####
