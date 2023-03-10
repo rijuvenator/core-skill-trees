@@ -673,6 +673,7 @@ async function main()
     function diceRoll(N)
     {
         diceValue = Math.floor(Math.random() * N) + 1;
+        roll_res10.innerHTML = diceValue.toString();
         addValue = parseInt(roll_add.value);
         roll_res_add.innerHTML = roll_add.value;
         result = diceValue + addValue;
