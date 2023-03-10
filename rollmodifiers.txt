@@ -1,0 +1,16 @@
+bullseye  ST 3
+bullseye  EN 1
+bullseye  PE 1
+bullseye  AG 2
+mirage    ST 0
+mirage    EN 0
+mirage    PE 0
+mirage    AG 0
+hex       ST 0
+hex       EN 0
+hex       PE 0
+hex       AG 0
+talent    ST 0
+talent    EN 0
+talent    PE 0
+talent    AG 0

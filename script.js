@@ -6,6 +6,9 @@ async function main()
     response = await fetch(lowerCaseCharacterName + '_skills.txt');
     data = await response.text();
 
+    rm_response = await fetch('rollmodifiers.txt');
+    rm_data = await rm_response.text();
+
     // load the text file
     // it consists of 367 lines:
     // lines 0-6 are character name, base class, and 4 subclass names, left to right, and record separator RS = ####
@@ -55,6 +58,21 @@ async function main()
             DESCRIPTION_TEXTS = [];
         }
     });
+
+    // load the roll modifiers
+    // it's just lines of 3 fields: lower case character name, 2 letter stat abbrev, and value
+    // only copy in the relevant values
+    var ROLL_NAMES = ['ST', 'EN', 'PE', 'AG'];
+    var ROLL_DATA = {}
+
+    rm_data.split('\n').forEach((line, index) => {
+        fields = line.split(/\s+/); // split on multiple spaces
+        if (fields[0] == lowerCaseCharacterName)
+        {
+            ROLL_DATA[fields[1]] = {'value':fields[2]};
+        }
+    })
+
 
     // begin the SVG file in earnest
 
@@ -543,6 +561,127 @@ async function main()
     capeClassText((WIDTH/2 - 115)*PXPERMM,  55, SUBCLASSES[1] , 'SUBCLASS');
     capeClassText((WIDTH/2 + 115)*PXPERMM,  55, SUBCLASSES[2] , 'SUBCLASS');
     capeClassText((WIDTH/2 + 155)*PXPERMM, 260, SUBCLASSES[3] , 'SUBCLASS');
+
+    // roll row
+    // first, outer row
+    // then, because I have dynamic "hard coded" widths set in many items below, add a spacer that will be 1/2 the leftover space
+    // ugly, but I don't want to figure out a better way of setting widths
+    // set the spacer width at the end
+    // keep track of row width
+    div = document.createElement('div');
+    div.className = 'rollouter row';
+    document.body.appendChild(div);
+
+    spacerDiv = document.createElement('div');
+    spacerDiv.className = 'rollcolumn';
+    spacerH2 = document.createElement('h2');
+    spacerH2.className = 'ib';
+    spacerH2.innerHTML = '';
+    spacerDiv.appendChild(spacerH2);
+    div.appendChild(spacerDiv);
+
+    TOTAL_ROW_WIDTH = 0;
+
+    // handy function encapsulating non-interactive roll row text with variable width; it also adds to div and to row width
+    function addRollH2(width, text)
+    {
+        subdiv = document.createElement('div');
+        subdiv.className = 'rollcolumn';
+        subdiv.style = 'width:' + width.toString() + '%';
+        elm = document.createElement('h2');
+        elm.className = 'ib';
+        elm.innerHTML = text;
+        div.appendChild(subdiv);
+        subdiv.appendChild(elm);
+        TOTAL_ROW_WIDTH += width;
+        return elm;
+    }
+
+    // roll title
+    roll_title = addRollH2(17, 'Stat Presets:');
+
+    // defined way up top in an array for order purposes
+    // make a button for each statistic; define the callback later
+    ROLL_NAMES.forEach(name => {
+        subdiv = document.createElement('div');
+        subdiv.className = 'rollcolumn';
+        subdiv.style = 'width:5%';
+        TOTAL_ROW_WIDTH += 5;
+
+        roll_button = document.createElement('button');
+        roll_button.className = 'rollbutton';
+        roll_button.innerHTML = name;
+
+        div.appendChild(subdiv);
+        subdiv.appendChild(roll_button);
+
+        ROLL_DATA[name]['button'] = roll_button;
+    })
+
+    // base and +
+    roll_base = addRollH2(6, '1d10');
+    roll_plus = addRollH2(2 , '+');
+
+    // the next thing is also inputtable, so make it an input
+    subdiv = document.createElement('div');
+    subdiv.className = 'rollcolumn';
+    subdiv.style = 'width:3%';
+    TOTAL_ROW_WIDTH += 3;
+    roll_add = document.createElement('input');
+    roll_add.type = 'text';
+    roll_add.value = '0';
+    roll_add.className = 'ib rollinput';
+    div.appendChild(subdiv);
+    subdiv.appendChild(roll_add);
+
+    // I don't fully understand this next part, except I think it has to do with async functions and variables
+    // the callback function takes the value of the button as its input, bypassing indices and etc
+    // then it looks up the relevant modifier and sets the value accordingly
+    function setRollInputValue(key)
+    {
+        roll_add.value = ROLL_DATA[key]['value'].toString();
+    }
+
+    for (let [key, data] of Object.entries(ROLL_DATA))
+    {
+        data['button'].addEventListener('click', function(){setRollInputValue(this.innerHTML);});
+    }
+
+    // the roll button, which will take a callback
+    subdiv = document.createElement('div');
+    subdiv.className = 'rollcolumn';
+    subdiv.style = 'width:10%';
+    TOTAL_ROW_WIDTH += 10;
+
+    roll_button = document.createElement('button');
+    roll_button.className = 'rollbutton';
+    roll_button.innerHTML = 'Roll';
+
+    div.appendChild(subdiv);
+    subdiv.appendChild(roll_button);
+
+    // the results: the d10 roll, +, the modifier, =, and the result
+    roll_res10    = addRollH2(4 , '0');
+    roll_res_plus = addRollH2(2 , '+');
+    roll_res_add  = addRollH2(4 , '0');
+    roll_res_plus = addRollH2(2 , '=');
+    roll_result   = addRollH2(4 , '0');
+
+    // now we can define the dice roll; floor(rand() * N) + 1 will do it.
+    // get whatever the final value of the modifier input is; set the modifier result indicator to it;
+    // then compute the result; add it to the string
+    function diceRoll(N)
+    {
+        diceValue = Math.floor(Math.random() * N) + 1;
+        addValue = parseInt(roll_add.value);
+        roll_res_add.innerHTML = roll_add.value;
+        result = diceValue + addValue;
+        roll_result.innerHTML = result.toString();
+    }
+    roll_button.addEventListener('click', function(){diceRoll(10)});
+
+    // we've kept track of every width as a %, so subtract from 100 and /2 to get the left spacer width
+    spacerDiv.style.width = ((100-TOTAL_ROW_WIDTH)/2).toString() + '%';
 
 }
 main();
