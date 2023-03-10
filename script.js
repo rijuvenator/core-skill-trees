@@ -62,7 +62,7 @@ async function main()
     // load the roll modifiers
     // it's just lines of 3 fields: lower case character name, 2 letter stat abbrev, and value
     // only copy in the relevant values
-    var ROLL_NAMES = ['ST', 'EN', 'PE', 'AG'];
+    var ROLL_NAMES = ['STR', 'END', 'PER', 'AGL'];
     var ROLL_DATA = {}
 
     rm_data.split('\n').forEach((line, index) => {
@@ -605,8 +605,8 @@ async function main()
     ROLL_NAMES.forEach(name => {
         subdiv = document.createElement('div');
         subdiv.className = 'rollcolumn';
-        subdiv.style = 'width:5%';
-        TOTAL_ROW_WIDTH += 5;
+        subdiv.style = 'width:7%';
+        TOTAL_ROW_WIDTH += 7;
 
         roll_button = document.createElement('button');
         roll_button.className = 'rollbutton';
