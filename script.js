@@ -142,7 +142,7 @@ async function main()
     function setStatesFromCode(code)
     {
         sortedKeys = Object.keys(STATES).sort();
-        // limit the number of characters parsed to 9
+        // limit the number of characters parsed to 9; maxLength also enforces
         for (digitNumber=0; digitNumber<Math.min(code.length,9); digitNumber++)
         {
             chr = code[digitNumber];
@@ -158,34 +158,6 @@ async function main()
             }
         }
     }
-
-    // state row: it's a div with 3 columns; inner elements are class ib (inline block); button sets states; 
-    div = document.createElement('div');
-    div.className = 'stateouter row';
-    div1 = document.createElement('div');
-    div1.className = 'statecolumn';
-    div2 = document.createElement('div');
-    div2.className = 'statecolumn';
-    div3 = document.createElement('div');
-    div3.className = 'statecolumn';
-    ss_title = document.createElement('h2');
-    ss_title.className = 'ib';
-    ss_title.innerHTML = 'Save State:';
-    ss_input = document.createElement('input');
-    ss_input.type = 'text';
-    ss_input.value = '000000000';
-    ss_input.className = 'ib stateinput';
-    ss_button = document.createElement('button');
-    ss_button.className = 'statebutton';
-    ss_button.innerHTML = 'Set State';
-    ss_button.addEventListener('click', function(){setStatesFromCode(ss_input.value)});
-    div.appendChild(div1);
-    div.appendChild(div2);
-    div.appendChild(div3);
-    div1.appendChild(ss_title);
-    div2.appendChild(ss_input);
-    div3.appendChild(ss_button);
-    document.body.appendChild(div);
 
     // more or less self explanatory text boilerplate
 
@@ -562,77 +534,80 @@ async function main()
     capeClassText((WIDTH/2 + 115)*PXPERMM,  55, SUBCLASSES[2] , 'SUBCLASS');
     capeClassText((WIDTH/2 + 155)*PXPERMM, 260, SUBCLASSES[3] , 'SUBCLASS');
 
-    // roll row
-    // first, outer row
-    // then, because I have dynamic "hard coded" widths set in many items below, add a spacer that will be 1/2 the leftover space
-    // ugly, but I don't want to figure out a better way of setting widths
-    // set the spacer width at the end
-    // keep track of row width
-    div = document.createElement('div');
-    div.className = 'rollouter row';
-    document.body.appendChild(div);
+    // row blocks
+    // defining common row functions which create row elements: H2, input, and button
+    // they now use the same base CSS classes, only modifying when necessary
 
-    spacerDiv = document.createElement('div');
-    spacerDiv.className = 'rollcolumn';
-    spacerH2 = document.createElement('h2');
-    spacerH2.className = 'ib';
-    spacerH2.innerHTML = '';
-    spacerDiv.appendChild(spacerH2);
-    div.appendChild(spacerDiv);
-
-    TOTAL_ROW_WIDTH = 0;
-
-    // handy function encapsulating non-interactive roll row text with variable width; it also adds to div and to row width
-    function addRollH2(width, text)
-    {
-        subdiv = document.createElement('div');
-        subdiv.className = 'rollcolumn';
-        subdiv.style = 'width:' + width.toString() + '%';
+    function addRowH2(text, subdiv) {
         elm = document.createElement('h2');
-        elm.className = 'ib';
+        elm.className = 'ib elempadding';
         elm.innerHTML = text;
-        div.appendChild(subdiv);
         subdiv.appendChild(elm);
-        TOTAL_ROW_WIDTH += width;
         return elm;
     }
 
-    // roll title
-    roll_title = addRollH2(17, 'Stat Presets:');
+    function addRowInput(value, maxLength, subdiv) {
+        elm = document.createElement('input');
+        elm.type = 'text';
+        elm.value = value;
+        elm.maxLength = maxLength;
+        elm.className = 'ib elempadding inputcommon';
+        subdiv.appendChild(elm);
+        return elm;
+    }
+
+    function addRowButton(text, subdiv) {
+        elm = document.createElement('button');
+        elm.className = 'buttoncommon';
+        elm.innerHTML = text;
+        subdiv.appendChild(elm);
+        return elm;
+    }
+
+    // state row
+    // first, outer which defines the overall width and clears floats
+    // second, inner which has margin auto to stretch within the div
+    // then add any elements to the inner div
+
+    div = document.createElement('div');
+    div.className = 'stateouter row';
+    document.body.appendChild(div);
+    subdiv = document.createElement('div');
+    subdiv.className = 'innerstretch';
+    div.appendChild(subdiv);
+
+    addRowH2('Save State:', subdiv);
+    ss_input = addRowInput('000000000', '9', subdiv);
+    ss_input.classList.add('stateinput');
+    ss_button = addRowButton('Set State', subdiv);
+    ss_button.addEventListener('click', function(){setStatesFromCode(ss_input.value)});
+
+    // roll row
+    // first, outer which defines the overall width and clears floats
+    // second, inner which has margin auto to stretch within the div
+    // then add any elements to the inner div
+
+    div = document.createElement('div');
+    div.className = 'rollouter row';
+    document.body.appendChild(div);
+    subdiv = document.createElement('div');
+    subdiv.classname = 'innerstretch';
+    div.appendChild(subdiv);
+
+    addRowH2('Stat Presets:', subdiv);
 
     // defined way up top in an array for order purposes
     // make a button for each statistic; define the callback later
     ROLL_NAMES.forEach(name => {
-        subdiv = document.createElement('div');
-        subdiv.className = 'rollcolumn';
-        subdiv.style = 'width:7%';
-        TOTAL_ROW_WIDTH += 7;
-
-        roll_button = document.createElement('button');
-        roll_button.className = 'rollbutton';
-        roll_button.innerHTML = name;
-
-        div.appendChild(subdiv);
-        subdiv.appendChild(roll_button);
-
+        roll_button = addRowButton(name, subdiv);
         ROLL_DATA[name]['button'] = roll_button;
     })
 
-    // base and +
-    roll_base = addRollH2(6, '1d10');
-    roll_plus = addRollH2(2 , '+');
+    addRowH2('1d10', subdiv);
+    addRowH2('+', subdiv);
 
-    // the next thing is also inputtable, so make it an input
-    subdiv = document.createElement('div');
-    subdiv.className = 'rollcolumn';
-    subdiv.style = 'width:3%';
-    TOTAL_ROW_WIDTH += 3;
-    roll_add = document.createElement('input');
-    roll_add.type = 'text';
-    roll_add.value = '0';
-    roll_add.className = 'ib rollinput';
-    div.appendChild(subdiv);
-    subdiv.appendChild(roll_add);
+    roll_add = addRowInput('0', '3', subdiv);
+    roll_add.classList.add('rollinput');
 
     // I don't fully understand this next part, except I think it has to do with async functions and variables
     // the callback function takes the value of the button as its input, bypassing indices and etc
@@ -647,25 +622,14 @@ async function main()
         data['button'].addEventListener('click', function(){setRollInputValue(this.innerHTML);});
     }
 
-    // the roll button, which will take a callback
-    subdiv = document.createElement('div');
-    subdiv.className = 'rollcolumn';
-    subdiv.style = 'width:10%';
-    TOTAL_ROW_WIDTH += 10;
-
-    roll_button = document.createElement('button');
-    roll_button.className = 'rollbutton';
-    roll_button.innerHTML = 'Roll';
-
-    div.appendChild(subdiv);
-    subdiv.appendChild(roll_button);
+    roll_button = addRowButton('Roll', subdiv);
 
     // the results: the d10 roll, +, the modifier, =, and the result
-    roll_res10    = addRollH2(4 , '0');
-    roll_res_plus = addRollH2(2 , '+');
-    roll_res_add  = addRollH2(4 , '0');
-    roll_res_plus = addRollH2(2 , '=');
-    roll_result   = addRollH2(4 , '0');
+    roll_res10    = addRowH2('0', subdiv); roll_res10  .classList.add('rolltextfixed');
+    roll_res_plus = addRowH2('+', subdiv);
+    roll_res_add  = addRowH2('0', subdiv); roll_res_add.classList.add('rolltextfixed');
+    roll_res_plus = addRowH2('=', subdiv);
+    roll_result   = addRowH2('0', subdiv); roll_result .classList.add('rolltextfixed');
 
     // now we can define the dice roll; floor(rand() * N) + 1 will do it.
     // get whatever the final value of the modifier input is; set the modifier result indicator to it;
@@ -680,9 +644,5 @@ async function main()
         roll_result.innerHTML = result.toString();
     }
     roll_button.addEventListener('click', function(){diceRoll(10)});
-
-    // we've kept track of every width as a %, so subtract from 100 and /2 to get the left spacer width
-    spacerDiv.style.width = ((100-TOTAL_ROW_WIDTH)/2).toString() + '%';
-
 }
 main();

@@ -20,11 +20,8 @@ body {
 .center {
     text-align: center;
 }
-.ib {
-    display: inline-block;
-}
 
-/* TEXT STYLES */
+/* SVG TEXT STYLES */
 .label {
     font-weight: bold;
     font-size: 12pt;
@@ -57,45 +54,6 @@ body {
     font-style: italic;
 }
 
-/* STATE ROW */
-.stateouter {
-    width: 33%;
-    margin: auto;
-}
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.statecolumn {
-    width: 33.3%;
-    float: left;
-}
-.stateinput {
-    width: 100%;
-    height: 28px;
-    font-weight: bold;
-    font-size: 18pt;
-    font-family: Georgia, sans-serif;
-}
-.statebutton {
-    height: 30px;
-    font-family: Georgia, sans-serif;
-    font-size: 14pt;
-    border: 0px solid black;
-    border-radius: 7px;
-    padding: 2px;
-    width: 75%;
-    color: white;
-    background-color: sienna;
-}
-.statebutton:hover{
-    background-color: burlywood;
-}
-.statebutton:active{
-    background-color: bisque;
-}
-
 /*NAV BAR*/
 .navbardiv {
     padding-top: 20px;
@@ -123,38 +81,76 @@ a:active {
     color: white;
 }
 
+/* ROW COMMON */
+.ib {
+    display: inline-block;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.innerstretch {
+    margin: auto;
+}
+.elempadding {
+    padding: 3px 5px 3px 5px;
+}
+input.inputcommon {
+    font-weight: bold;
+    font-size: 18pt;
+    font-family: Georgia, sans-serif;
+    text-align:center;
+    border: 0px solid black;
+    padding-top: 0px;
+}
+button.buttoncommon {
+    height: 30;
+    font-family: Georgia, sans-serif;
+    font-size: 14pt;
+    border: 0px solid black;
+    border-radius: 7px;
+    margin: 0 5px 0 5px;
+    padding: 5px 10px 5px 10px;
+    color: white;
+    background-color: sienna;
+}
+button.buttoncommon:hover{
+    background-color: burlywood;
+}
+button.buttoncommon:active{
+    background-color: bisque;
+}
+
+/* STATE ROW */
+.stateouter {
+    width: 75%;
+    margin: auto;
+}
+@media only screen and (max-width: 1000px) {
+    .stateouter {
+        width: 100%;
+    }
+}
+.stateinput {
+    width: 9em;
+}
+
+
 /* ROLL ROW */
 .rollouter {
     width: 75%;
     margin: auto;
     padding-top: 10px;
 }
-.rollcolumn {
-    width: 11%;
-    float: left;
+@media only screen and (max-width: 1000px) {
+    .rollouter {
+        width: 100%;
+    }
+}
+.rolltextfixed {
+    width: 1em;
 }
 .rollinput {
-    width: 100%;
-    height: 30;
-    font-weight: bold;
-    font-size: 18pt;
-    font-family: Georgia, sans-serif;
-    text-align:center;
-}
-.rollbutton {
-    height: 30px;
-    font-family: Georgia, sans-serif;
-    font-size: 14pt;
-    border: 0px solid black;
-    border-radius: 7px;
-    padding: 2px;
-    width: 80%;
-    color: white;
-    background-color: sienna;
-}
-.rollbutton:hover{
-    background-color: burlywood;
-}
-.rollbutton:active{
-    background-color: bisque;
+    width: 1em;
 }
