@@ -10,7 +10,7 @@ hex       STR 0
 hex       END 0
 hex       PER 0
 hex       AGL 0
-talent    STR 0
-talent    END 0
-talent    PER 0
-talent    AGL 0
+talent    STR -1
+talent    END -2
+talent    PER 2
+talent    AGL 2
