@@ -576,10 +576,20 @@ async function main()
     subdiv.className = 'innerstretch';
     div.appendChild(subdiv);
 
-    addRowH2('Save State:', subdiv);
-    ss_input = addRowInput('000000000', '9', subdiv);
+    rscol1 = document.createElement('div');
+    rscol1.className = 'ib rscol';
+    subdiv.appendChild(rscol1);
+    rscol2 = document.createElement('div');
+    rscol2.className = 'ib rscol';
+    subdiv.appendChild(rscol2);
+    rscol3 = document.createElement('div');
+    rscol3.className = 'ib rscol';
+    subdiv.appendChild(rscol3);
+
+    addRowH2('Save State:', rscol1);
+    ss_input = addRowInput('000000000', '9', rscol2);
     ss_input.classList.add('stateinput');
-    ss_button = addRowButton('Set State', subdiv);
+    ss_button = addRowButton('Set State', rscol3);
     ss_button.addEventListener('click', function(){setStatesFromCode(ss_input.value)});
 
     // roll row
@@ -594,19 +604,32 @@ async function main()
     subdiv.classname = 'innerstretch';
     div.appendChild(subdiv);
 
-    addRowH2('Stat Presets:', subdiv);
+    rscol1 = document.createElement('div');
+    rscol1.className = 'ib rscol';
+    subdiv.appendChild(rscol1);
+    rscol2 = document.createElement('div');
+    rscol2.className = 'ib rscol';
+    subdiv.appendChild(rscol2);
+    rscol3 = document.createElement('div');
+    rscol3.className = 'ib rscol';
+    subdiv.appendChild(rscol3);
+    rscol4 = document.createElement('div');
+    rscol4.className = 'ib rscol';
+    subdiv.appendChild(rscol4);
+
+    addRowH2('Stat Presets:', rscol1);
 
     // defined way up top in an array for order purposes
     // make a button for each statistic; define the callback later
     ROLL_NAMES.forEach(name => {
-        roll_button = addRowButton(name, subdiv);
+        roll_button = addRowButton(name, rscol2);
         ROLL_DATA[name]['button'] = roll_button;
     })
 
-    addRowH2('1d10', subdiv);
-    addRowH2('+', subdiv);
+    addRowH2('1d10', rscol3);
+    addRowH2('+', rscol3);
 
-    roll_add = addRowInput('0', '3', subdiv);
+    roll_add = addRowInput('0', '3', rscol3);
     roll_add.classList.add('rollinput');
 
     // I don't fully understand this next part, except I think it has to do with async functions and variables
@@ -622,14 +645,14 @@ async function main()
         data['button'].addEventListener('click', function(){setRollInputValue(this.innerHTML);});
     }
 
-    roll_button = addRowButton('Roll', subdiv);
+    roll_button = addRowButton('Roll', rscol3);
 
     // the results: the d10 roll, +, the modifier, =, and the result
-    roll_res10    = addRowH2('0', subdiv); roll_res10  .classList.add('rolltextfixed');
-    roll_res_plus = addRowH2('+', subdiv);
-    roll_res_add  = addRowH2('0', subdiv); roll_res_add.classList.add('rolltextfixed');
-    roll_res_plus = addRowH2('=', subdiv);
-    roll_result   = addRowH2('0', subdiv); roll_result .classList.add('rolltextfixed');
+    roll_res10    = addRowH2('0', rscol4); roll_res10  .classList.add('rolltextfixed');
+    roll_res_plus = addRowH2('+', rscol4);
+    roll_res_add  = addRowH2('0', rscol4); roll_res_add.classList.add('rolltextfixed');
+    roll_res_plus = addRowH2('=', rscol4);
+    roll_result   = addRowH2('0', rscol4); roll_result .classList.add('rolltextfixed');
 
     // now we can define the dice roll; floor(rand() * N) + 1 will do it.
     // get whatever the final value of the modifier input is; set the modifier result indicator to it;

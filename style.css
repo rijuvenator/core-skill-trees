@@ -121,17 +121,15 @@ button.buttoncommon:hover{
 button.buttoncommon:active{
     background-color: bisque;
 }
+.rscol {}
+@media only screen and (max-width: 500px) { .rscol {width: 100%; } }
 
 /* STATE ROW */
 .stateouter {
-    width: 75%;
+    width: 100%;
     margin: auto;
 }
-@media only screen and (max-width: 1000px) {
-    .stateouter {
-        width: 100%;
-    }
-}
+@media only screen and (max-width: 1000px) { .stateouter {width: 100%; } }
 .stateinput {
     width: 9em;
 }
@@ -139,15 +137,13 @@ button.buttoncommon:active{
 
 /* ROLL ROW */
 .rollouter {
-    width: 75%;
+    width: 100%;
     margin: auto;
     padding-top: 10px;
+    padding-bottom: 20px;
 }
-@media only screen and (max-width: 1000px) {
-    .rollouter {
-        width: 100%;
-    }
-}
+@media only screen and (max-width: 785px) { .rollouter {width:  50%; } }
+@media only screen and (max-width: 550px) { .rollouter {width: 100%; } }
 .rolltextfixed {
     width: 1em;
 }
