@@ -21,6 +21,12 @@ body {
     text-align: center;
 }
 
+.svgcontainerdiv {
+    width: 85%;
+    margin: auto;
+}
+@media only screen and (max-width: 800px) { .svgcontainerdiv {width: 95%; } }
+
 /* SVG TEXT STYLES */
 .label {
     font-weight: bold;
@@ -121,19 +127,17 @@ button.buttoncommon:hover{
 button.buttoncommon:active{
     background-color: bisque;
 }
-.rscol {}
-@media only screen and (max-width: 500px) { .rscol {width: 100%; } }
 
 /* STATE ROW */
+.rscolstate {}
+@media only screen and (max-width: 500px) { .rscolstate {width: 100%; } }
 .stateouter {
     width: 100%;
     margin: auto;
 }
-@media only screen and (max-width: 1000px) { .stateouter {width: 100%; } }
 .stateinput {
     width: 9em;
 }
-
 
 /* ROLL ROW */
 .rollouter {
@@ -142,8 +146,10 @@ button.buttoncommon:active{
     padding-top: 10px;
     padding-bottom: 20px;
 }
-@media only screen and (max-width: 785px) { .rollouter {width:  50%; } }
-@media only screen and (max-width: 550px) { .rollouter {width: 100%; } }
+@media only screen and (max-width: 850px) and (min-width: 680px) { .rollouter {width: 66%; } }
+@media only screen and (max-width: 679px) and (min-width: 550px) { .rollouter {width: 80%; } }
+.rscolroll {}
+@media only screen and (max-width:  500px) { .rscolroll {width: 100%; } }
 .rolltextfixed {
     width: 1em;
 }

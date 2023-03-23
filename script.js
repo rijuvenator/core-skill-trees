@@ -82,12 +82,15 @@ async function main()
     var HEIGHT = 180;
     var PXPERMM = 3.7;
 
+    svgContainerDiv = document.createElement('div');
+    svgContainerDiv.className = 'svgcontainerdiv';
+    document.body.appendChild(svgContainerDiv);
+
     var svg = document.createElementNS(SVGNS, 'svg');
     svg.setAttribute('style', 'border: 0px solid black; padding-top: 10px');
-    svg.setAttribute('width', WIDTH * PXPERMM);
-    svg.setAttribute('height', HEIGHT * PXPERMM);
+    svg.setAttribute('viewBox', '0 0 ' + (WIDTH * PXPERMM).toString() + ' ' + (HEIGHT * PXPERMM).toString());
     svg.setAttributeNS('http://www.w3.org/2000/xmlns/', 'xmlns:xlink', 'http://www.w3.org/1999/xlink');
-    document.body.appendChild(svg);
+    svgContainerDiv.appendChild(svg);
 
     // defs for adding masks (the lines shouldn't be visible)
     var defs = document.createElementNS(SVGNS, 'defs');
@@ -97,8 +100,8 @@ async function main()
     var image = document.createElementNS(SVGNS, 'image');
     image.setAttributeNS(null, 'x', 0);
     image.setAttributeNS(null, 'y', 0);
-    image.setAttributeNS(null, 'width' , WIDTH*PXPERMM);
-    image.setAttributeNS(null, 'height', HEIGHT*PXPERMM);
+    image.setAttributeNS(null, 'width' , '100%');
+    image.setAttributeNS(null, 'height', '100%');
     image.setAttributeNS(null, 'href', 'bg.jpg');
     image.setAttributeNS(null, 'preserveAspectRatio', 'none');
     svg.appendChild(image);
@@ -577,13 +580,13 @@ async function main()
     div.appendChild(subdiv);
 
     rscol1 = document.createElement('div');
-    rscol1.className = 'ib rscol';
+    rscol1.className = 'ib rscolstate';
     subdiv.appendChild(rscol1);
     rscol2 = document.createElement('div');
-    rscol2.className = 'ib rscol';
+    rscol2.className = 'ib rscolstate';
     subdiv.appendChild(rscol2);
     rscol3 = document.createElement('div');
-    rscol3.className = 'ib rscol';
+    rscol3.className = 'ib rscolstate';
     subdiv.appendChild(rscol3);
 
     addRowH2('Save State:', rscol1);
@@ -605,16 +608,16 @@ async function main()
     div.appendChild(subdiv);
 
     rscol1 = document.createElement('div');
-    rscol1.className = 'ib rscol';
+    rscol1.className = 'ib rscolroll';
     subdiv.appendChild(rscol1);
     rscol2 = document.createElement('div');
-    rscol2.className = 'ib rscol';
+    rscol2.className = 'ib rscolroll';
     subdiv.appendChild(rscol2);
     rscol3 = document.createElement('div');
-    rscol3.className = 'ib rscol';
+    rscol3.className = 'ib rscolroll';
     subdiv.appendChild(rscol3);
     rscol4 = document.createElement('div');
-    rscol4.className = 'ib rscol';
+    rscol4.className = 'ib rscolroll';
     subdiv.appendChild(rscol4);
 
     addRowH2('Stat Presets:', rscol1);
