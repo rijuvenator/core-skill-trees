@@ -22,9 +22,10 @@ body {
 }
 
 .svgcontainerdiv {
-    width: 85%;
+    width: 80%;
     margin: auto;
 }
+@media only screen and (max-width: 1000px) { .svgcontainerdiv {width: 85%; } }
 @media only screen and (max-width: 800px) { .svgcontainerdiv {width: 95%; } }
 
 /* SVG TEXT STYLES */
