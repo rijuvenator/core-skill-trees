@@ -205,41 +205,41 @@ LORD OF THE FLINGS
 middle
 auto
 ####
-Discover this subclass to unlock!
+Gain the ability to Throw living and recently-living matter. Living
+projectiles gain Advantage on damaging attacks.
 
 
-
-LOCKED SKILL
+MANTON
 4-1
 3
 end
 hanging
 ####
-Discover this subclass to unlock!
+Projectiles made from your own body do not require rolls - you can
+choose a number 1-20 and use that in place of the STR roll.
 
 
-
-LOCKED SKILL
+MUTILATION
 5-1
 0
 start
 middle
 ####
-Discover this subclass to unlock!
+Gain the ability to Throw multiple projectiles in one Throw, sacrificing
+accuracy for one unmodified d10 per projectile. This cannot stack
+with other buffs.
 
-
-
-LOCKED SKILL
+BUCKSHOT
 5-2
 2
 start
 hanging
 ####
-Discover this subclass to unlock!
-
-
-
-LOCKED SKILL
+Your body continually produces Polyps, round knuckle-like skin and bone
+growths with a thin stalk. Thrown Polyps embed themselves into living targets
+and cause their targets to also grow Polyps upon death. Harvesting Polyps
+costs a Bonus Action.
+BUDDING ABOMINATION
 6-1
 0
 start

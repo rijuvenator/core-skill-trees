@@ -2,7 +2,7 @@ THE TALENT
 CHANGER
 ?
 HACKER
-?
+SAGE
 ETERNAL
 ####
 User can Shift, adopting the features of a nearby human over five seconds and suffering
@@ -285,41 +285,41 @@ BEST OF BOTH WORLDS
 end
 auto
 ####
-Discover this subclass to unlock!
+While Shifted, you do not age. The original person ages twice
+as fast.
 
 
-
-LOCKED SKILL
+DORIAN GRAY
 4-5
 0
 start
 middle
 ####
-Discover this subclass to unlock!
+Ignore all consent requirements. Gain all the benefits of having
+consent whenever applicable.
 
 
-
-LOCKED SKILL
+NO MEANS YES
 5-9
 0
 start
 middle
 ####
-Discover this subclass to unlock!
+Any Shift or Self creation that requires proximity to a person can be
+achieved with proximity to a piece of that person.
 
 
-
-LOCKED SKILL
+TROPHIES
 5-10
 0
 start
 middle
 ####
-Discover this subclass to unlock!
-
-
-
-LOCKED SKILL
+Remaining Shifted in close proximity to the original person will drain
+their personality, memories, and sentience into the user. When used against
+capes, this grants a permanent +1 boost corresponding to the target's highest
+stat. The target will be left a mindless shell.
+DEMENTOR
 6-5
 0
 start

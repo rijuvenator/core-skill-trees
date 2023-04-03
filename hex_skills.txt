@@ -325,41 +325,41 @@ LOCKED SKILL
 start
 middle
 ####
-Discover this subclass to unlock!
-
-
-
-LOCKED SKILL
+Gain the ability to Partial Jump, teleporting parts of your
+body individually. Detached parts function normally for up to
+five minutes, and can be reattached at any time. Partial Jumps
+cost a movement turn.
+PARTIAL JUMP
 4-6
 0
 start
 middle
 ####
-Discover this subclass to unlock!
+When in ten or more pieces, all cooldowns are halved.
 
 
 
-LOCKED SKILL
+BODY HORROR
 5-11
 0
 start
 middle
 ####
-Discover this subclass to unlock!
+Murder grants you an additional Jump before cooldown for the
+next 24 hours.
 
 
-
-LOCKED SKILL
+BLOODLUST
 5-12
 2
 start
 hanging
 ####
-Discover this subclass to unlock!
+Gain the ability to Intersect, teleporting into living things
+to replace them. Intersect automatically triggers cooldown and
+costs both an Action and a Movement turn.
 
-
-
-LOCKED SKILL
+INTERSECT
 6-6
 0
 start
