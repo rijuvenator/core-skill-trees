@@ -1,6 +1,6 @@
 BULLSEYE
 OLYMPIAN
-?
+STRANGER
 ?
 ?
 SAGE
@@ -241,9 +241,9 @@ and cause their targets to also grow Polyps upon death. Harvesting Polyps
 costs a Bonus Action.
 BUDDING ABOMINATION
 6-1
-0
-start
-middle
+4
+end
+auto
 ####
 Discover this subclass to unlock!
 
