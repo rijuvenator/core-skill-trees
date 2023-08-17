@@ -1,7 +1,7 @@
 MIRAGE
 JOKER
 ?
-?
+JUDGE
 ?
 ?
 ####
@@ -245,41 +245,41 @@ LOCKED SKILL
 start
 middle
 ####
-Discover this subclass to unlock!
-
-
-
-LOCKED SKILL
+Gain the ability to manifest a Dream Projection, a Projection that 
+affects sleeping targets. Dream Projections are single-target and do
+not have entity limits. Dream Projections require planning and undivided
+attention, and reduce the user’s PER to 1 for their duration.
+DREAMSCAPE
 4-2
 3
 end
 hanging
 ####
-Discover this subclass to unlock!
-
-
-
-LOCKED SKILL
+Target multiple targets with a Dream Projection. Asleep targets will 
+share the same dream, and awake targets will be able to interact
+with the other targets within the Projection. All targets will have 
+their PER reduced to 1 until the Dream Projection ends.
+COLLECTIVE UNCONSCIOUS
 5-3
 0
 start
 middle
 ####
-Discover this subclass to unlock!
-
-
-
-LOCKED SKILL
+Draw faces, names, and historical information from a target’s 
+subconscious to create recognizable Entities within a Dream
+Projection. Details gathered this way will not be known to the user
+or other targets, but the target will observe them.
+SUBCONSCIOUS KNOWLEDGE
 5-4
 0
 start
 middle
 ####
-Discover this subclass to unlock!
+Sleeping targets of a Dream Projection cannot be woken up while
+the Dream Projection is active.
 
 
-
-LOCKED SKILL
+NIGHTMARE
 6-2
 5
 end
