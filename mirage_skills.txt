@@ -251,9 +251,9 @@ not have entity limits. Dream Projections require planning and undivided
 attention, and reduce the user’s PER to 1 for their duration.
 DREAMSCAPE
 4-2
-3
+4
 end
-hanging
+middle
 ####
 Target multiple targets with a Dream Projection. Asleep targets will 
 share the same dream, and awake targets will be able to interact
@@ -261,9 +261,9 @@ with the other targets within the Projection. All targets will have
 their PER reduced to 1 until the Dream Projection ends.
 COLLECTIVE UNCONSCIOUS
 5-3
-0
-start
+6
 middle
+auto
 ####
 Draw faces, names, and historical information from a target’s 
 subconscious to create recognizable Entities within a Dream
@@ -271,9 +271,9 @@ Projection. Details gathered this way will not be known to the user
 or other targets, but the target will observe them.
 SUBCONSCIOUS KNOWLEDGE
 5-4
-0
+2
 start
-middle
+hanging
 ####
 Sleeping targets of a Dream Projection cannot be woken up while
 the Dream Projection is active.
