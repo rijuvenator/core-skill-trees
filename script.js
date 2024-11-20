@@ -3,8 +3,8 @@ async function main()
     // the whole thing has to be in an asynchronous function so that I have access to it
     // slick trick: use the window html path filename to get the lower case, no "the" name to build the skills txt file name
     lowerCaseCharacterName = /.*\/(.*?)\.html/.exec(window.location.pathname)[1];
-    response = await fetch(lowerCaseCharacterName + '_skills.txt');
-    data = await response.text();
+    response = await fetch(lowerCaseCharacterName + '_skills.txt', {headers: {'Content-Type': 'text/plain; charset=utf-8'}});
+    data = (await response.text()).replace(/\r\n/g, '\n');
 
     rm_response = await fetch('rollmodifiers.txt');
     rm_data = await rm_response.text();
@@ -161,7 +161,49 @@ async function main()
             }
         }
     }
-
+	
+	// download strings describing the current state of each character
+	// it's a json where the keys are the character name and the values are the code that you should put into setStatesFromCode()
+	
+	const BIN_ID = "673906b4acd3cb34a8a9b251" //address where data is stored
+	
+	async function fetchCodes() {
+		try {
+			const response = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
+				method: 'GET'
+			});
+			const result = await response.json();
+			console.log("Went to JSONBin.io again...");
+			return result.record;  // JSONBin wraps data in 'record' field
+			//return response;
+		} catch (error) {
+			console.error('Error loading data:', error);
+			return { notes: {} };
+		}
+	}
+	
+	// name is lowerCaseCharacterName, code is string
+	async function storeCodes(name, code) {
+		try {
+			var data = JSON.parse(sessionStorage.getItem('fullCodes'));
+			//console.log(data[name]);
+			data[name] = code;
+			console.log(JSON.stringify(data));
+			const response = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+				method: 'PUT',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(data)
+			});
+			console.log(response.json());
+			return response.ok;
+		} catch(error) {
+			console.error('Error saving data:', error);
+			return false;
+		}
+	}
+		
     // more or less self explanatory text boilerplate
 
     function makeText(x, y, text, ha='start', va='auto')
@@ -567,6 +609,24 @@ async function main()
         return elm;
     }
 
+	// Make sure the default codes are stored in sessionStorage
+	// If they aren't download them and store them there
+	// Then "download" the code from sessionStorage to store
+	
+	if (sessionStorage.getItem(lowerCaseCharacterName+'Code') == null) {
+		let codeList = await fetchCodes();
+		sessionStorage.setItem('fullCodes', JSON.stringify(codeList));
+		//console.log(codeList);
+		console.log(Object.keys(codeList));
+		for (const [key, value] of Object.entries(codeList)) {
+			console.log(key);
+			sessionStorage.setItem(key+'Code', value);
+		}
+	}
+
+	const defaultCode = sessionStorage.getItem(lowerCaseCharacterName+'Code');
+	setStatesFromCode(defaultCode);
+
     // state row
     // first, outer which defines the overall width and clears floats
     // second, inner which has margin auto to stretch within the div
@@ -588,12 +648,29 @@ async function main()
     rscol3 = document.createElement('div');
     rscol3.className = 'ib rscolstate';
     subdiv.appendChild(rscol3);
+	rscol4 = document.createElement('div');
+    rscol4.className = 'ib rscolstate';
+    subdiv.appendChild(rscol4);
 
     addRowH2('Save State:', rscol1);
-    ss_input = addRowInput('000000000', '9', rscol2);
+    ss_input = addRowInput(defaultCode, '9', rscol2);
     ss_input.classList.add('stateinput');
-    ss_button = addRowButton('Set State', rscol3);
-    ss_button.addEventListener('click', function(){setStatesFromCode(ss_input.value)});
+    ss_button1 = addRowButton('Set State', rscol3);
+    ss_button1.addEventListener('click', function(){setStatesFromCode(ss_input.value)});
+	ss_button2 = addRowButton('Save State', rscol4);
+	confirmationDialogue = "Are you sure you want to overwrite the default value?\n\nOnly do this if your character has finalized and acquired a new skill.";
+	ss_button2.addEventListener('click', async function(event) {
+		if (confirm(confirmationDialogue)) {
+			let newCode = ss_input.value;
+			sessionStorage.setItem(lowerCaseCharacterName+'Code', newCode);
+			console.log(await storeCodes(lowerCaseCharacterName, newCode));
+			//var data = JSON.parse(sessionStorage.getItem('fullCodes'));
+			//console.log(data);
+			//console.log(Object.keys(data));
+			//console.log(data.talent);
+			//console.log(data('talent'));
+		}
+	});
 
     // roll row
     // first, outer which defines the overall width and clears floats
