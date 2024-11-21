@@ -165,17 +165,15 @@ async function main()
 	// download strings describing the current state of each character
 	// it's a json where the keys are the character name and the values are the code that you should put into setStatesFromCode()
 	
-	const BIN_ID = "673906b4acd3cb34a8a9b251" //address where data is stored
+	const STORAGE_URL = "http://132.145.169.145:27701/api/core-skill-tree"
 	
 	async function fetchCodes() {
 		try {
-			const response = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}/latest`, {
+			const response = await fetch(STORAGE_URL, {
 				method: 'GET'
 			});
 			const result = await response.json();
-			console.log("Went to JSONBin.io again...");
-			return result.record;  // JSONBin wraps data in 'record' field
-			//return response;
+			return result
 		} catch (error) {
 			console.error('Error loading data:', error);
 			return { notes: {} };
@@ -185,18 +183,14 @@ async function main()
 	// name is lowerCaseCharacterName, code is string
 	async function storeCodes(name, code) {
 		try {
-			var data = JSON.parse(sessionStorage.getItem('fullCodes'));
-			//console.log(data[name]);
-			data[name] = code;
-			console.log(JSON.stringify(data));
-			const response = await fetch(`https://api.jsonbin.io/v3/b/${BIN_ID}`, {
+			data = {[name]: code};
+			const response = await fetch(STORAGE_URL, {
 				method: 'PUT',
 				headers: {
 					'Content-Type': 'application/json',
 				},
 				body: JSON.stringify(data)
 			});
-			console.log(response.json());
 			return response.ok;
 		} catch(error) {
 			console.error('Error saving data:', error);
@@ -615,11 +609,7 @@ async function main()
 	
 	if (sessionStorage.getItem(lowerCaseCharacterName+'Code') == null) {
 		let codeList = await fetchCodes();
-		sessionStorage.setItem('fullCodes', JSON.stringify(codeList));
-		//console.log(codeList);
-		console.log(Object.keys(codeList));
 		for (const [key, value] of Object.entries(codeList)) {
-			console.log(key);
 			sessionStorage.setItem(key+'Code', value);
 		}
 	}
@@ -658,17 +648,12 @@ async function main()
     ss_button1 = addRowButton('Set State', rscol3);
     ss_button1.addEventListener('click', function(){setStatesFromCode(ss_input.value)});
 	ss_button2 = addRowButton('Save State', rscol4);
-	confirmationDialogue = "Are you sure you want to overwrite the default value?\n\nOnly do this if your character has finalized and acquired a new skill.";
+	confirmationDialogue = "Are you sure you want to set a new default value?\n\nThis will /permanently/ overwrite the old value.";
 	ss_button2.addEventListener('click', async function(event) {
 		if (confirm(confirmationDialogue)) {
 			let newCode = ss_input.value;
 			sessionStorage.setItem(lowerCaseCharacterName+'Code', newCode);
-			console.log(await storeCodes(lowerCaseCharacterName, newCode));
-			//var data = JSON.parse(sessionStorage.getItem('fullCodes'));
-			//console.log(data);
-			//console.log(Object.keys(data));
-			//console.log(data.talent);
-			//console.log(data('talent'));
+			await storeCodes(lowerCaseCharacterName, newCode);
 		}
 	});
 
