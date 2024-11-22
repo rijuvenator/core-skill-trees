@@ -165,7 +165,7 @@ async function main()
 	// download strings describing the current state of each character
 	// it's a json where the keys are the character name and the values are the code that you should put into setStatesFromCode()
 	
-	const STORAGE_URL = "http://132.145.169.145:27701/api/core-skill-tree"
+	const STORAGE_URL = "http://132.145.169.145/api/core-skill-tree/"
 	
 	async function fetchCodes() {
 		try {
@@ -191,6 +191,8 @@ async function main()
 				},
 				body: JSON.stringify(data)
 			});
+			if (response.ok==200) { alert(Value saved!)}
+			else {alert(Failed to save...))}
 			return response.ok;
 		} catch(error) {
 			console.error('Error saving data:', error);
