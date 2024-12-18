@@ -3,8 +3,8 @@ async function main()
     // the whole thing has to be in an asynchronous function so that I have access to it
     // slick trick: use the window html path filename to get the lower case, no "the" name to build the skills txt file name
     lowerCaseCharacterName = /.*\/(.*?)\.html/.exec(window.location.pathname)[1];
-    response = await fetch(lowerCaseCharacterName + '_skills.txt');
-    data = await response.text();
+    response = await fetch(lowerCaseCharacterName + '_skills.txt', {headers: {'Content-Type': 'text/plain; charset=utf-8'}});
+    data = (await response.text()).replace(/\r\n/g, '\n');
 
     rm_response = await fetch('rollmodifiers.txt');
     rm_data = await rm_response.text();
@@ -161,7 +161,63 @@ async function main()
             }
         }
     }
+    
+    // download strings describing the current state of each character
+    // it's a json where the keys are the character name and the values are the code that you should put into setStatesFromCode()
+    
+    const STORAGE_URL = "http://132.145.169.145/api/core-skill-tree/"
+    
+    // Helper function to timeout the fetch request
+    async function fetchWithTimeout(url, options = {}, timeout = 1000) {
+        const controller = new AbortController(); // Create an AbortController to cancel the request
+        const signal = controller.signal;
+        const timeoutId = setTimeout(() => controller.abort(), timeout); // Set up the timeout
 
+        try {
+            const response = await fetch(url, { ...options, signal });
+            clearTimeout(timeoutId); // Clear the timeout if the fetch completes successfully
+            return response;
+        } catch (err) {
+            if (err.name === 'AbortError') {
+                throw new Error('Request timed out');
+            }
+            throw err; // Re-throw other errors
+        }
+    }
+    
+    async function fetchCodes() {
+        try {
+            const response = await fetchWithTimeout(STORAGE_URL, {
+                method: 'GET'
+            });
+            const result = await response.json();
+            return result
+        } catch (error) {
+            console.error('Error loading data:', error);
+            return { notes: {} };
+        }
+    }
+    
+    // name is lowerCaseCharacterName, code is string
+    async function storeCodes(name, code) {
+        try {
+            data = {[name]: code};
+            const response = await fetchWithTimeout(STORAGE_URL, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data)
+            }); 
+            if (response.ok==200) {alert("Value saved!")}
+            else {alert("Failed to save...")}
+            return response.ok;
+        } catch(error) {
+            console.error('Error saving data:', error);
+            return false;
+        }
+    }
+        
     // more or less self explanatory text boilerplate
 
     function makeText(x, y, text, ha='start', va='auto')
@@ -567,6 +623,29 @@ async function main()
         return elm;
     }
 
+    // Make sure the default codes are stored in sessionStorage
+    // If they aren't download them and store them there
+    // Then "download" the code from sessionStorage to store
+    
+    if (sessionStorage.getItem(lowerCaseCharacterName+'Code') == null) {
+        try {
+            let codeList = await fetchCodes();
+            for (const [key, value] of Object.entries(codeList)) {
+                sessionStorage.setItem(key+'Code', value);
+            }
+        } catch {
+            console.error("Couldn't transfer data to localStorage:", error);
+        }
+    }
+    
+    let defaultCode;
+    if (sessionStorage.getItem(lowerCaseCharacterName+'Code') != null) {
+        defaultCode = sessionStorage.getItem(lowerCaseCharacterName+'Code');
+        setStatesFromCode(defaultCode);
+    } else {
+        defaultCode = "000000000";
+    }
+
     // state row
     // first, outer which defines the overall width and clears floats
     // second, inner which has margin auto to stretch within the div
@@ -588,12 +667,24 @@ async function main()
     rscol3 = document.createElement('div');
     rscol3.className = 'ib rscolstate';
     subdiv.appendChild(rscol3);
+    rscol4 = document.createElement('div');
+    rscol4.className = 'ib rscolstate';
+    subdiv.appendChild(rscol4);
 
     addRowH2('Save State:', rscol1);
-    ss_input = addRowInput('000000000', '9', rscol2);
+    ss_input = addRowInput(defaultCode, '9', rscol2);
     ss_input.classList.add('stateinput');
-    ss_button = addRowButton('Set State', rscol3);
-    ss_button.addEventListener('click', function(){setStatesFromCode(ss_input.value)});
+    ss_button1 = addRowButton('Set State', rscol3);
+    ss_button1.addEventListener('click', function(){setStatesFromCode(ss_input.value)});
+    ss_button2 = addRowButton('Save State', rscol4);
+    confirmationDialogue = "Are you sure you want to set a new default value?\n\nThis will /permanently/ overwrite the old value.";
+    ss_button2.addEventListener('click', async function(event) {
+        if (confirm(confirmationDialogue)) {
+            let newCode = ss_input.value;
+            sessionStorage.setItem(lowerCaseCharacterName+'Code', newCode);
+            await storeCodes(lowerCaseCharacterName, newCode);
+        }
+    });
 
     // roll row
     // first, outer which defines the overall width and clears floats
