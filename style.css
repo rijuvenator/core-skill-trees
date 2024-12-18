@@ -122,6 +122,7 @@ button.buttoncommon {
     color: white;
     background-color: sienna;
 }
+@media only screen and (max-width: 500px) { button.buttoncommon {margin-top: 5px; } }
 button.buttoncommon:hover{
     background-color: burlywood;
 }
