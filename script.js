@@ -165,7 +165,7 @@ async function main()
     // download strings describing the current state of each character
     // it's a json where the keys are the character name and the values are the code that you should put into setStatesFromCode()
     
-    const STORAGE_URL = "http://132.145.169.145/api/core-skill-tree/"
+    const STORAGE_URL = "https://132.145.169.145.nip.io/api/core-skill-tree/"
     
     // Helper function to timeout the fetch request
     async function fetchWithTimeout(url, options = {}, timeout = 1000) {
